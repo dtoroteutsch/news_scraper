@@ -1,10 +1,10 @@
 import yaml
 
-___config = None
+__config = None
 
 def config():
-    global ___config
-    if not ___config:
+    global __config
+    if not __config:
         with open('config.yaml', mode = 'r') as file:
-            ___config = yaml.load(file)
-    return ___config
+            __config = yaml.safe_load(file)
+    return __config
